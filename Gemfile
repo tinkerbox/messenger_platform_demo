@@ -20,7 +20,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Puma as the app server
-gem 'puma'
+# gem 'puma'
 
 # Integrate Facebook's messenger platform with your rails app
 gem 'messenger_platform', :git => 'http://github.com/tinkerbox/messenger_platform.git'

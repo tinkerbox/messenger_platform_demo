@@ -1,6 +1,6 @@
 GIT
   remote: http://github.com/tinkerbox/messenger_platform.git
-  revision: 5a209bab43834c94705d2c989db32c0e1ae065c1
+  revision: ed30e559d8d86d1cf07462168ab1b87eeb20ac97
   specs:
     messenger_platform (0.0.1)
       faraday
@@ -89,7 +89,6 @@ GEM
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     pg (0.18.4)
-    puma (3.4.0)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.4)
@@ -179,7 +178,6 @@ DEPENDENCIES
   jquery-rails
   messenger_platform!
   pg
-  puma
   quiet_assets
   rails (= 4.2.5.1)
   rails_12factor
