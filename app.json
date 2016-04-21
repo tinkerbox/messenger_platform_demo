@@ -1,0 +1,6 @@
+{
+  "name": "MessengerPlatform Gem Sample App",
+  "description": "A barebones rails app to demo Facebook's Messenger Platform capabilities",
+  "repository": "https://github.com/tinkerbox/messenger_platform_demo",
+  "keywords": ["facebook", "messenger", "rails"]
+}
