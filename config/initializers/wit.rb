@@ -1,19 +1,13 @@
-require 'wit'
+Rails.application.eager_load!
 
 actions = {
-
-  :say => -> (session_id, context, msg) {
-    puts msg
-  },
-
-  :merge => -> (session_id, context, entities, msg) {
-    return context
-  },
-
-  :error => -> (session_id, context, msg) {
-    puts error.message
-  }
-
+  :say => BaseActions.new.method(:say).to_proc,
+  :merge => BaseActions.new.method(:merge).to_proc,
+  :error => BaseActions.new.method(:error).to_proc
 }
+
+WitAction.subclasses.each do |action_class|
+  actions[action_class.action_name] = action_class.new.method(:perform).to_proc
+end
 
 WIT_CLIENT = Wit.new(ENV['WIT_AI_ACCESS_TOKEN'], actions)

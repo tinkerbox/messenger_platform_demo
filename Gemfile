@@ -28,7 +28,8 @@ gem 'rails_12factor', group: :production
 gem 'wit'
 
 # Integrate Facebook's messenger platform with your rails app
-gem 'messenger_platform', :git => 'http://github.com/tinkerbox/messenger_platform.git'
+# gem 'messenger_platform', :git => 'http://github.com/tinkerbox/messenger_platform.git'
+gem 'messenger_platform', :path => '../messenger_platform'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

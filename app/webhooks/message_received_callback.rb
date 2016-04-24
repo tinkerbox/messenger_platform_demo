@@ -5,75 +5,8 @@ class MessageReceivedCallback < MessengerPlatform::Callback
   end
 
   def run(event)
-    response = WIT_CLIENT.message event.text
-    puts response.inspect
-    recipient = MessengerPlatform::Messaging::Recipient.new(id: event.sender.id)
-    response['outcomes'].each do |outcome|
-      if outcome['entities'].keys.include?('intent') && outcome['entities']['intent'].detect { |intent| intent['value'] == 'products' }
-        respond_with_products(recipient)
-      end
-    end
-    # delivery = MessengerPlatform::Api::Messages.create(recipient) do |delivery|
-    #   delivery.build_message { |message| message.text = response }
-    # end
-  end
-
-  private
-
-  def respond_with_products(recipient)
-    delivery = MessengerPlatform::Api::Messages.create(recipient) do |delivery|
-      delivery.build_message do |message|
-        message.build_attachment(:generic_template) do |template|
-
-          template.build_element do |element|
-
-            element.title = "Classic White T-Shirt"
-            element.image_url = 'http://petersapparel.parseapp.com/img/item100-thumb.png'
-            element.subtitle = 'Soft white cotton t-shirt is back in style'
-
-            element.build_button(:web_url) do |button|
-              button.url = "https://petersapparel.parseapp.com/view_item?item_id=100"
-              button.title = "View Item"
-            end
-
-            element.build_button(:web_url) do |button|
-              button.url = "https://petersapparel.parseapp.com/buy_item?item_id=100"
-              button.title = "Buy Item"
-            end
-
-            element.build_button(:postback) do |button|
-              button.payload = "USER_DEFINED_PAYLOAD_FOR_ITEM100"
-              button.title = "Bookmark Item"
-            end
-
-          end
-
-          template.build_element do |element|
-
-            element.title = "Classic Grey T-Shirt"
-            element.image_url = 'http://petersapparel.parseapp.com/img/item101-thumb.png'
-            element.subtitle = 'Soft gray cotton t-shirt is back in style'
-
-            element.build_button(:web_url) do |button|
-              button.url = "https://petersapparel.parseapp.com/view_item?item_id=101"
-              button.title = "View Item"
-            end
-
-            element.build_button(:web_url) do |button|
-              button.url = "https://petersapparel.parseapp.com/buy_item?item_id=101"
-              button.title = "Buy Item"
-            end
-
-            element.build_button(:postback) do |button|
-              button.payload = "USER_DEFINED_PAYLOAD_FOR_ITEM101"
-              button.title = "Bookmark Item"
-            end
-
-          end
-
-        end
-      end
-    end
+    response = WIT_CLIENT.run_actions event.sender.id, event.text, {}
+    # puts response.inspect
   end
 
 end
