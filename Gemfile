@@ -22,8 +22,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Puma as the app server
 # gem 'puma'
 
+# Ruby library for Wit.ai
+gem 'wit'
+
 # Integrate Facebook's messenger platform with your rails app
-gem 'messenger_platform', :git => 'http://github.com/tinkerbox/messenger_platform.git'
+# gem 'messenger_platform', :git => 'http://github.com/tinkerbox/messenger_platform.git'
+gem 'messenger_platform', :path => '../messenger_platform'
 
 # Makes running your Rails app easier. Based on the ideas behind 12factor.net
 gem 'rails_12factor', group: :production
