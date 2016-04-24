@@ -1,8 +1,10 @@
 class CheckForCategoryAction < WitAction
 
   def perform(session_id, context)
+    puts "CheckForCategoryAction: #{context.inspect}"
+    return context unless context['user_intent'] == 'buy'
+
     count = rand(2)
-    puts count
     if count != 0
       context["results"] = count
       respond_with_products(recipient(session_id))
