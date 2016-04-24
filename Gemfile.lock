@@ -1,5 +1,6 @@
-PATH
-  remote: ../messenger_platform
+GIT
+  remote: http://github.com/tinkerbox/messenger_platform.git
+  revision: 0d62982dd2ec3626469898424da52edea2216f07
   specs:
     messenger_platform (0.1.0)
       faraday (~> 0)
