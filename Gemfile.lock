@@ -1,6 +1,6 @@
 GIT
   remote: http://github.com/tinkerbox/messenger_platform.git
-  revision: 0d62982dd2ec3626469898424da52edea2216f07
+  revision: 8662a1ed60e4978e4061e2fe1b23c70093bb64dd
   specs:
     messenger_platform (0.1.0)
       faraday (~> 0)
@@ -84,7 +84,7 @@ GEM
     mime-types-data (3.2016.0221)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
-    multi_json (1.11.2)
+    multi_json (1.11.3)
     multipart-post (2.0.0)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
